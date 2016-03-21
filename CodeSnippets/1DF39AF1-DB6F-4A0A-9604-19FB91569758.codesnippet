@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tableview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK: - TABLEVIEW
+    //MARK: Setup
+    func setupTableView() {
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    //MARK: Delegate
+    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 1
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        let cell = UITableViewCell()
+        
+        return cell
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1DF39AF1-DB6F-4A0A-9604-19FB91569758</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>UITableView setup with required delegate methods</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Table View Template</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>keyboard</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK: - KEYBOARD
+//MARK: Register
+func registerKeyboardNotifications() {
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+}
+//MARK: Unregister
+func unregisterKeyboardNotifications() {
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
+}
+//MARK: Will Hide
+func keyboardWillHide(aNotification: NSNotification) {
+    let userInfo = aNotification.userInfo!
+    let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+    self.view.layoutIfNeeded()
+    
+    //Reset Constraints Here
+    
+    UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: { () -&gt; Void in
+        self.view.layoutIfNeeded()
+        }, completion: nil)
+}
+//MARK: Will Change
+func keyboardWillChange(aNotification: NSNotification) {
+    let userInfo = aNotification.userInfo!
+    let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+    let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+    self.view.layoutIfNeeded()
+    
+    var keyboardHeight = keyboardSize!.height
+    
+    //Adjust Constraints Here
+    
+    UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: { () -&gt; Void in
+        self.view.layoutIfNeeded()
+        }, completion: nil)
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3C796099-D0BA-4E79-B773-F79963935E6E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Keyboard Animations</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
