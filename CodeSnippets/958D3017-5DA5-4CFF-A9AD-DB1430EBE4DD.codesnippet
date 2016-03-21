@@ -3,24 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>err</string>
+	<string>$err</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>if error != nil {
-                print("\(__FUNCTION__) - Error: \(error!.localizedDescription)")
-            }
-            else {
-                
-            }</string>
+	<string>if let err = error {
+    print("\(__FUNCTION__) - \(err.localizedDescription)")
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>958D3017-5DA5-4CFF-A9AD-DB1430EBE4DD</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Error Check (FUNCTION - Error: Description)</string>
+	<string>unwrap and print error</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
