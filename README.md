@@ -1,2 +1,2 @@
-# xcode-userdata
+# Userdata
 code snippets, themes and keybindings
